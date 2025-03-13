@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <title>Dell</title>
+  <link rel="stylesheet" type="text/css" href="index.css">
+</head>
+
+<body>
+  <div id="contenedor">
+
+    <header>
+      <h1>Dell</h1>
+    </header>
+
+    <nav>
+      <ul class="menu">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="AcercaDe.html">Acerca de</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section id="Contenido">
+      <article>
+        <div class="slider">
+          <button onclick="atras()" class="Flecha" id="Atras">⬅</button>
+          <div id="slider-images">
+            <img src="dell.comp.jpeg" alt="Computadora Dell" class="slider-item">
+            <img src="dell.xps.jpeg" alt="Dell XPS" class="slider-item" style="display: none;">
+            <img src="dell.gaming.jpeg" alt="Dell Gaming" class="slider-item" style="display: none;">
+            <img src="dell.opti.jpeg" alt="Dell Optiplex" class="slider-item" style="display: none;">
+            <img src="dell.lati.jpeg" alt="Dell Latitude" class="slider-item" style="display: none;">
+          </div>
+          <button onclick="siguiente()" class="Flecha">➡</button>
+        </div>
+
+        <h3>¿Qué es la empresa Dell?</h3>
+        <p>
+          Dell es una reconocida empresa estadounidense fundada en 1984 por Michael Dell. Es conocida por diseñar,
+          fabricar y vender computadoras personales, servidores, monitores, accesorios y soluciones tecnológicas. Dell se
+          distingue por su modelo de negocio directo al cliente, lo que permite personalizar los equipos según las
+          necesidades del usuario.
+        </p>
+        <center>
+          <img src="Dell-Logo.png" width="50px" height="50px" alt="Logo Dell">
+        </center>
+      </article>
+    </section>
+
+    <aside>
+      <img src="dell.anun.jpeg" width="100%" alt="Anuncio Dell">
+      <h1>13% de Descuento</h1>
+    </aside>
+
+    <footer>
+      <center>
+        <h3>Miguel Alexander - Derechos Reservados</h3>
+        <p>
+          <a href="https://ar.tienda.dell.com/collections/frontpage?sort_by=best-selling&filter.v.price.gte=100">Dell
+            sitio oficial</a>
+        </p>
+      </center>
+    </footer>
+
+    <script>
+      let currentIndex = 0;
+      const sliderItems = document.querySelectorAll(".slider-item");
+
+      function mostrarImagen(index) {
+        sliderItems.forEach((item, i) => {
+          item.style.display = i === index ? "block" : "none";
+        });
+      }
+
+      function siguiente() {
+        currentIndex = (currentIndex + 1) % sliderItems.length;
+        mostrarImagen(currentIndex);
+      }
+
+      function atras() {
+        currentIndex = (currentIndex - 1 + sliderItems.length) % sliderItems.length;
+        mostrarImagen(currentIndex);
+      }
+
+      mostrarImagen(currentIndex);
+    </script>
+  </div>
+</body>
+
+</html>
